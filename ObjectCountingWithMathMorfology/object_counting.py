@@ -3,7 +3,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import morphology
-from two_pass import two_pass_labeling
+from modules.two_pass import two_pass_labeling
 
 def count(labeled):
     return len(set(labeled.ravel()))
@@ -51,7 +51,7 @@ def find_objects(image):
 
 
 if __name__== "__main__":
-    image = np.load("./ps.npy.txt").astype("uint8")
+    image = np.load("./data/ps.npy.txt").astype("uint8")
     
     res1, res2, res3, res4, res5 = find_objects(image)
     
