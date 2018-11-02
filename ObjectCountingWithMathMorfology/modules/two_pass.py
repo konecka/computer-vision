@@ -46,6 +46,7 @@ def union(label1, label2, linked):
 def two_pass_labeling(B):
     linked = np.zeros(len(B), dtype="uint")
     labels = np.zeros_like(B)
+    
     label = 1
     for row in range(B.shape[0]):
         for col in range(B.shape[1]):
@@ -67,6 +68,11 @@ def two_pass_labeling(B):
     replacements = {}
     curr_labels = [1]
     
+    for row in range(B.shape[0]):
+        for col in range(B.shape[1]):
+            if B[row, col] !=0:
+                labels[row, col] = find(labels[row, col], linked)
+                    
     for row in range(B.shape[0]):
         for col in range(B.shape[1]):
             
