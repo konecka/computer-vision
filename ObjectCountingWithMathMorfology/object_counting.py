@@ -15,7 +15,8 @@ def check1(sub, masks):
 def count_objects(image):
     
     outer_mask = [np.array([[0, 0], [0, 1]]), np.array([[0, 0], [1, 0]]),
-                  np.array([[1, 0], [0, 0]]), np.array([[0, 1], [0, 0]])]
+                  np.array([[1, 0], 
+                            [0, 0]]), np.array([[0, 1], [0, 0]])]
     inter_mask = [np.array([[0, 1], [1, 1]]), np.array([[1, 0], [1, 1]]),
                   np.array([[1, 1], [0, 1]]), np.array([[1, 1], [1, 0]])]
     
@@ -107,10 +108,10 @@ if __name__== "__main__":
     print(hole_on_left) # 123
     print(sum_objects) # 500
     
-#    plt.figure()
-#    plt.subplot(121)
-#    plt.imshow(image)
-#    
+    plt.figure()
+    plt.subplot(121)
+    plt.imshow(image)
+    
 #    plt.subplot(122)
 #    plt.imshow(res)
 #    plt.show()
