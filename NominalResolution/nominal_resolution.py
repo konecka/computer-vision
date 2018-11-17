@@ -47,7 +47,7 @@ def nominal_resolution(image, r_size):
     if not distances:
         return 0
     else:
-        return  max(distances) /r_size
+        return  r_size / max(distances)
 
 if __name__ == "__main__":
     
