@@ -70,24 +70,39 @@ def perimeter(image, label=1, base_label=0):
 
         if is_slanted(y, x, two_neighbors, image):
             slanted += 1
-            
+    print(slanted)      
     return len(boundaries) + slanted*math.sqrt(2) - slanted
 
     
 if __name__ == "__main__":
     
-    image = np.zeros((7, 7))
-
-    image[0, 5] = 1
-    image[1, 1:6] = 1
-    image[1, 4:6] = 1
-    image[2, 2:7] = 1
-    image[3, 3:5] = 1
-    image[4, 2:4] = 1
-    image[5, 3:4] = 1
+    image = np.zeros((16, 16))
+    
+    LB = np.zeros((16, 16))
+#    LB[4:, :4] = 1
+    
+#    LB[3:10, 8:] = 1
+    
+    LB[[3, 4, 3],[8, 8, 9]] = 1
+    LB[[8, 9, 9],[8, 8, 9]] = 1
+    LB[[3, 4, 3],[-2, -1, -1]] = 1
+    LB[[9, 8, 9],[-2, -1, -1]] = 1
+    
+    LB[12:-1, 6:9] = 1
+    
+#    image[3, 4, 3],[8, 8, 9] = 1
+#    image[1, 1:6] = 1
+#    image[1, 4:6] = 1
+#    image[2, 2:7] = 1
+#    image[3, 3:5] = 1
+#    image[4, 2:4] = 1
+#    image[5, 3:4] = 1
+    
+#    image = np.zeros((20, 20))
+#    image[5:9, 5:9] = 1
     
     
-    print(perimeter(image))
+    print(perimeter(LB))
       
     plt.figure(1)
     plt.imshow(image)
