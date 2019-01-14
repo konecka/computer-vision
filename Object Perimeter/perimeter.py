@@ -70,9 +70,13 @@ if __name__ == "__main__":
     
     LB[12:-1, 6:9] = 3
     
+    LB[11:15, 10:16] = 4
+    LB[13:15, 13] = 0
+    
     print("Object 1 =", perimeter(LB, 1))
     print("Object 2 =", perimeter(LB, 2))
     print("Object 3 =", perimeter(LB, 3))
+    print("Object 4 =", perimeter(LB, 4))
     
 #    print("Object 1 =", perimeter(LB, 1))
     
